@@ -26,7 +26,9 @@ function generatePassword(length, isUpperCase, isLowercase, isSpecial, isNumbers
   for (var i = 0; i <= length; i++) {
     var randomNumber = Math.floor(Math.random() * possibleChars.length);
     password += possibleChars.substring(randomNumber, randomNumber +1);
-  }
+  } 
+
+  console.log("worked");
   return password;
   
 }
@@ -34,7 +36,7 @@ function generatePassword(length, isUpperCase, isLowercase, isSpecial, isNumbers
 // Write password to the #password input
 function writePassword() {
   var passwordLength = prompt("How long do you want your password, between 8-128 characters");
-  if (passwordLength !== null) {
+  if (passwordLength !== null || passwordLength !== "") {
   while (passwordLength < 8 || passwordLength > 128) {
     passwordLength = prompt("Invaild input, please input between 8 and 128")
   }  
